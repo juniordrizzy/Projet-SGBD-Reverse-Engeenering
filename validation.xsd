@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="attribut" type="xsd:string"></xsd:element>
+
+	<xsd:element name="entite">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="attribut" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+				<xsd:element ref="association" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="nom" type="xsd:string" use="required"></xsd:attribute>
+		</xsd:complexType> 
+	</xsd:element>
+	<xsd:element name="association">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="attribut" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+				<xsd:element ref="entite" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="nom" type="xsd:string" use="required"></xsd:attribute>
+		</xsd:complexType> 
+	</xsd:element>
+
+	<xsd:element name="diagramme">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="entite" maxOccurs="unbounded" minOccurs="1"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType> 
+	</xsd:element>
+</xsd:schema>

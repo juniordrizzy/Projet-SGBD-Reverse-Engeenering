@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<diagramme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="validation.xsd">
+	<entite nom="Patient">
+		<attribut>idPatient</attribut>
+		<attribut>prenom</attribut>
+		<attribut>nom</attribut>
+		<attribut>adresse</attribut>
+                <association nom="consomme">
+	            <entite nom="Medicament">
+		        <attribut>idMedicament</attribut>
+		        <attribut>nom</attribut>
+	                <association nom="prescrit">
+	                    <entite nom="Medecin">
+		                <attribut>idMedecin</attribut>
+		                <attribut>prenom</attribut>
+		                <attribut>nom</attribut>
+		                <attribut>adresse</attribut>
+    	                    </entite>
+                       </association>
+	           </entite>
+               </association>
+	   </entite>
+</diagramme>
